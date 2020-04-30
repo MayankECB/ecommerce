@@ -36,8 +36,17 @@ export class HomeComponent implements OnInit {
     return new Array(i);
   }
 
-  addToCart(){
+  quickView(productSelected:Product){
+
+  }
+  
+  addToWishList(productSelected:Product){
+
+  }
+
+  addToCart(productSelected:Product){
     alert('addToCart()')
+    console.log(productSelected)
     let product: CartProduct;
     this.productService.getProductDetailsById(this.productId)
     .subscribe(p => {
