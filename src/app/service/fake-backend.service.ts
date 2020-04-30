@@ -38,6 +38,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
         // route functions
         function getProductList() {
+            console.log('\n--data.Products---',data.Products)
             return of(new HttpResponse({ status: 200, body: ((data.Products) as any).default }));
         }
 

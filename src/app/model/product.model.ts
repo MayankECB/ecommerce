@@ -1,6 +1,10 @@
+import { Product } from './product.interface';
+
 export class ProductItem {
-    id: string;
-    name: string;
+    productId: number;
+    productName: string;
+    categoryId: number;
+    categoryName: string;
     imageUrl: string[];
     description: string;
     price: string;
@@ -8,17 +12,30 @@ export class ProductItem {
     discountedPrice: string;
     offerLabel: string;
     rating: string;
-    constructor(id: string, name: string, imageUrl: string[],
-        description: string, price: string, discount: string,
-        discountedPrice: string, offerLabel: string, rating: string ) {
-        this.id = id || '';
-        this.name = name || 'No Name';
-        this.imageUrl = imageUrl || [];
-        this.description = description || '';
-        this.price = price || '0';
-        this.discount = discount || '0';
-        this.discountedPrice = discountedPrice || '0';
-        this.offerLabel = offerLabel || '';
-        this.rating = rating || '0';
+    color: string[];
+    size: string[];
+    quantity: number;
+    currenrcySymbol: string;
+
+    // constructor(id: number, name: string, categoryId: number, categoryName: string,
+    //     imageUrl: string[], description: string, price: string, discount: string,
+    //     discountedPrice: string, offerLabel: string, rating: string,  
+    //     color: string[], size: string[], quantity: number, currenrcySymbol: string) {
+        constructor(product:Product){    
+        this.productId = product.productId || 0;
+        this.productName = product.productName || 'No Name';
+        this.categoryId = product.categoryId || 0;
+        this.categoryName = product.categoryName || '';
+        this.imageUrl = product.imageUrl || [];
+        this.description = product.description || '';
+        this.price = product.price || '0';
+        this.discount = product.discount || '0';
+        this.discountedPrice = product.discountedPrice || '0';
+        this.offerLabel = product.offerLabel || '';
+        this.rating = product.rating || '0';
+        this.color = product.color || [];
+        this.size = product.size || [];
+        this.quantity = product.quantity || 0;
+        this.currenrcySymbol = product.currenrcySymbol || '$';
     }
 }
