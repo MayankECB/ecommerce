@@ -10,10 +10,12 @@ import { ProductManagementService } from '../services/product-management-service
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-  productItem: ProductItem;
+  product: ProductItem;
   productId: number;
   sizeId: number;
   colorId: number;
+  color: string;
+  size: string;
 
   constructor(private route: ActivatedRoute,
     private productService: ProductManagementService) { }
@@ -31,10 +33,9 @@ export class ProductDetailsComponent implements OnInit {
     .subscribe((response:any) => {
       for(var index of response.Products){
         if(index.productId == this.productId){
-          this.productItem = new ProductItem(index as Product);
+          this.product = new ProductItem(index as Product);
         }
       }
-      console.log(this.productItem);
     })
   }
 
