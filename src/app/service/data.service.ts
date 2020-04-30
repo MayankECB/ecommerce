@@ -18,11 +18,6 @@ export class DataService {
   fetchProductList(): Observable<any> {
     return this.httpClient.get('/api/getproductlist');
   }
-  
-  // getSmartphone(): Observable<HttpResponse<Smartphone[]>> {
-  //   return this.http.get<Smartphone[]>(
-  //     localUrl, { observe: 'response' });
-  // }
 
   fetchKartList() {
     return this.httpClient.get('/api/getUserKart');

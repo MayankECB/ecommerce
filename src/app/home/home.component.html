@@ -14,9 +14,9 @@
                         <img class="pic-2" src={{product.imageUrl[1]}}>
                     </a>
                     <ul class="social">
-                        <li><a href="" data-tip="Quick View"><i class="fa fa-search" (click)="quickView(product)"></i></a></li>
-                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag" (click)="addToWishList(product)"></i></a></li>
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart" (click)="addToCart(product)"></i></a></li>
+                        <li><a   [routerLink]="['/product-details', product.productId]" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a data-tip="Add to Wishlist"><i class="fa fa-shopping-bag" (click)="addToWishList(product)"></i></a></li>
+                        <li><a data-tip="Add to Cart"><i class="fa fa-shopping-cart" (click)="addToCart(product)"></i></a></li>
                     </ul>
                     <span class="product-new-label">{{product.offerLabel}}</span>
                     <span class="product-discount-label">{{product.discount}}%</span>

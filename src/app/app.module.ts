@@ -8,6 +8,7 @@ import {CardModule} from 'primeng/card';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 // component
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -35,6 +36,7 @@ import { FakeBackendInterceptor } from './service/fake-backend.service';
     CardModule,
     HttpClientModule,
     AngularFontAwesomeModule,
+    ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [DataService, DataShareService,
