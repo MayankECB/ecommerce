@@ -16,6 +16,7 @@ export class ProductDetailsComponent implements OnInit {
   colorId: number;
   color: string;
   size: string;
+  quantity: number;
 
   constructor(private route: ActivatedRoute,
     private productService: ProductManagementService) { }
@@ -26,6 +27,10 @@ export class ProductDetailsComponent implements OnInit {
     });
 
     this.getProductDetailsById(this.productId);
+  }
+
+  onAddProductToCart(){
+    alert('onAddProductToCart')
   }
 
   getProductDetailsById(id:number){

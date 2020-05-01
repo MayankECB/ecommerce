@@ -31,7 +31,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
 .product-grid .add-to-cart{color:#000;font-size:13px;font-weight:600}
 @media only screen and (max-width:990px){.product-grid{margin-bottom:30px}
 }
-.toast-header{
+/* .toast-header{
     background-color: #16a085;
     color: #fff;
     opacity: 0.8;
@@ -50,7 +50,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
 .toast div:first-child{
     background-color: #16a085;
     color: #fff;
-}
+} */
 .add-to-cart {
     border: 1px solid #e5e5e5;
     display: inline-block;

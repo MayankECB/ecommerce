@@ -5,14 +5,20 @@ import { ProductCatalogueComponent } from './product-catalogue/product-catalogue
 import { ProductReviewComponent } from './product-review/product-review.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductManagementRoutingModule } from './product-management-routing.module';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ProductSearchComponent, ProductCatalogueComponent, ProductReviewComponent, ProductDetailsComponent],
+  declarations: [
+    ProductSearchComponent, 
+    ProductCatalogueComponent, 
+    ProductReviewComponent, 
+    ProductDetailsComponent
+  ],
   imports: [
     CommonModule,
-    ProductManagementRoutingModule
+    ProductManagementRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule
   ]
 })
 export class ProductManagementModule { }

@@ -36,6 +36,28 @@
                     <div class="price">{{product.currenrcySymbol}}{{product.price}}
                         <span>{{product.currenrcySymbol}}{{product.discountedPrice}}</span>
                     </div>
+                    <!-- <div class="row">
+                        <div class="col-md-6">
+                        <strong class="d-flex">
+                            Color
+                          </strong>
+                          <select class="browser-default custom-select" style="width: 100px"
+                            [(ngModel)]="color">
+                            <option [value]="item.value" *ngFor="let item of product.color"> {{item}}
+                            </option>
+                          </select>
+                    </div>
+                    <div class="col-md-6">
+                    <strong class="d-flex">
+                        Size
+                      </strong>
+                      <select class="browser-default custom-select" style="width: 100px"
+                        [(ngModel)]="size">
+                        <option [value]="item.value" *ngFor="let item of product.size">{{item}}
+                        </option>
+                      </select>
+                    </div>
+                    </div> -->
                     <a class="add-to-cart" href="">+ Add To Cart</a>
                 </div>
             </div>

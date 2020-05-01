@@ -2,7 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.toast-container{
+/* .toast-container{
     top: 80px;
     .toast-header{
         background-color: #16a085;
@@ -13,4 +13,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         width: 250px;
         padding: 10px;
     }
-}
+} */

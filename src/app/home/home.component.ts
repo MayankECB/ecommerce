@@ -17,6 +17,9 @@ export class HomeComponent implements OnInit {
   productList: ProductItem[] = [];
   productItem: ProductItem;
   product: Product;
+  size: number;
+  color: string;
+  quantity: number;
 
   constructor(private dataService: DataService,
     private httpClient: HttpClient,
@@ -26,15 +29,15 @@ export class HomeComponent implements OnInit {
   }
   
   showSuccess(message, title){
-    this.toastr.success(message, title)
+//    this.toastr.success(message, title)
   }
 
   showError(message, title){
-      this.toastr.error(message, title)
+//      this.toastr.error(message, title)
   }
 
   showInfo(message, title){
-      this.toastr.info(message, title)
+//      this.toastr.info(message, title)
   }
 
   getProductList(){
@@ -58,18 +61,18 @@ export class HomeComponent implements OnInit {
   }
   
   addToWishList(productSelected:Product){
-    this.toastr.success('<i class="fas fa-check ml-1 pr-2"></i><strong>Product Added to the Cart</strong>', null, {
-      timeOut: 3000,
-      toastClass: 'toast-header',
-      progressBar: true,
-      progressAnimation: 'decreasing',
-      closeButton: true,
-      enableHtml: true
-    });
+    // this.toastr.success('<i class="fas fa-check ml-1 pr-2"></i><strong>Product Added to the Cart</strong>', null, {
+    //   timeOut: 3000,
+    //   toastClass: 'toast-header',
+    //   progressBar: true,
+    //   progressAnimation: 'decreasing',
+    //   closeButton: true,
+    //   enableHtml: true
+    // });
   }
 
   addToCart(productSelected:Product){
-    alert('addToCart()')
+    alert(this.size+' - addToCart() - '+this.color)
     console.log(productSelected)
     // let product: CartProduct;
     // this.productService.getProductDetailsById(this.productId)

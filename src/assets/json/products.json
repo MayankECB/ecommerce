@@ -68,7 +68,7 @@
         "offerLabel": "Sale",
         "currenrcySymbol": "$",
         "rating": "3",
-        "color": ["Blue", "Red"],
+        "color": ["Blue", "Red", "White"],
         "size": ["XL","M","L","XL"],
         "quantity": 12
       }
