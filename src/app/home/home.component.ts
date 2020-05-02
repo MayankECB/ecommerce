@@ -6,10 +6,15 @@ import { ProductItem } from '../model/product.model';
 import { Product } from '../model/product.interface';
 //import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { CartProductItem } from '../model/cartProduct.model';
+import { WishListItem } from '../model/wishList.model';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  providers: [NgbCarouselConfig],
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
@@ -20,11 +25,19 @@ export class HomeComponent implements OnInit {
   size: number;
   color: string;
   quantity: number;
+  cartProduct: CartProductItem;
+  wishListItem: WishListItem;
+  images = [700, 533, 807, 124].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   constructor(private dataService: DataService,
     private httpClient: HttpClient,
   //  private toastr: ToastrService,
-    private router: Router) {     
+    private router: Router,
+    config: NgbCarouselConfig) { 
+      config.interval = 10000;
+      config.wrap = false;
+      config.keyboard = false;
+      config.pauseOnHover = false;
     this.getProductList();
   }
   
@@ -61,53 +74,50 @@ export class HomeComponent implements OnInit {
   }
   
   addToWishList(productSelected:Product){
-    // this.toastr.success('<i class="fas fa-check ml-1 pr-2"></i><strong>Product Added to the Cart</strong>', null, {
-    //   timeOut: 3000,
-    //   toastClass: 'toast-header',
-    //   progressBar: true,
-    //   progressAnimation: 'decreasing',
-    //   closeButton: true,
-    //   enableHtml: true
-    // });
+    this.wishListItem = new WishListItem(productSelected.productId, productSelected.productName, 
+      productSelected.imageUrl[0], productSelected.description, productSelected.discountedPrice, 
+      productSelected.rating);
+
+      let cart: WishListItem[] = JSON.parse(localStorage.getItem('wishlist'));
+      if(cart == null){
+        cart = [];
+        cart.push(this.wishListItem);
+      } else{
+        let currentProduct = cart.filter(a => a.productId == this.wishListItem.productId);
+        if(currentProduct.length == 0){
+          cart.push(this.wishListItem);
+        }
+      }
+      localStorage.setItem('wishlist', JSON.stringify(cart));  
   }
 
   addToCart(productSelected:Product){
-    alert(this.size+' - addToCart() - '+this.color)
-    console.log(productSelected)
-    // let product: CartProduct;
-    // this.productService.getProductDetailsById(this.productId)
-    // .subscribe(p => {
-    //   product = p as CartProduct;
-    //   product.Quantity = this.quantity;
-    //   product.SizeId = this.sizeId;
-    //   product.ColorId = this.colorId;
-    //   let cart: CartProduct[] = JSON.parse(localStorage.getItem('Cart'));
-    //   if(cart == null){
-    //     cart = [];
-    //     cart.push(product);
-    //   } else{
-    //     let currentProduct = cart.filter(a => a.ProductId == product.ProductId);
-    //     if(currentProduct.length > 0){
-    //       cart.filter(a => {
-    //         a.Quantity = a.Quantity + this.quantity;
-    //       });
-    //     } else{
-    //       cart.push(product);
-    //     }
-    //   }
-    //   this.dataService.updateCartItemCount(cart.length);
-    //   this.dataService.updateShoppingCart(cart);
-    //   localStorage.setItem('Cart', JSON.stringify(cart));
-    //   this.toastr.success('<i class="fas fa-check ml-1 pr-2"></i><strong>Product Added to the Cart</strong>', null, {
-    //     timeOut: 3000,
-    //     toastClass: 'toast-header',
-    //     progressBar: true,
-    //     progressAnimation: 'decreasing',
-    //     closeButton: true,
-    //     enableHtml: true
-    //   });
-    // });
-    
+    let now = new Date();
+    now.setDate(now.getDate() + 5);
+
+    this.cartProduct = new CartProductItem(productSelected.productId, productSelected.productName, 
+      productSelected.imageUrl[0], productSelected.description, productSelected.price, productSelected.discount, 
+      productSelected.discountedPrice, productSelected.color[0], productSelected.size[0], 1, 
+      productSelected.currenrcySymbol,now.toDateString());
+
+      let cart: CartProductItem[] = JSON.parse(localStorage.getItem('shoppingCart'));
+      if(cart == null){
+        cart = [];
+        cart.push(this.cartProduct);
+      } else{
+        let currentProduct = cart.filter(a => a.productId == this.cartProduct.productId);
+        if(currentProduct.length > 0){
+          cart.filter(a => {
+            a.quantity = a.quantity + this.quantity;
+          });
+        } else{
+          cart.push(this.cartProduct);
+        }
+      }
+      localStorage.setItem('shoppingCart', JSON.stringify(cart));      
+
+//    this.productService.addToCart(this.cartProduct);
+    this.router.navigate(['/shopping-cart']);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isCollapsed = true;
-  constructor() { }
+
+  constructor(private router: Router) { 
+    }
 
   ngOnInit() {
   }
 
+  openWishlistPage(){
+    this.router.navigate(['/wishlist']);
+  }
+
+  openCartPage(){
+    this.router.navigate(['/shopping-cart']);
+  }
 }

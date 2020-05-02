@@ -1,7 +1,16 @@
 <div class="header">
-    <a href="#default" class="logo">YCORP</a>
+    <a href="#default" class="logo">YCORP..</a>
     <div class="header-right">
-      <a class="active" href="#home">Home</a>
-      <a class="fa fa-shopping-cart" href="#about"></a>      
+      <!-- <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item" mdbDropdown>
+          <a class="nav-link waves-effect dropdown-toggle" mdbDropdownToggle> -->
+            <!-- [routerLink]="['shopping-cart']" -->
+            <!-- <i class="fas fa-shopping-bag"></i>
+            <span class="clearfix d-none d-sm-inline-block"> Wishlist </span>
+          </a>
+          <app-wishlist-entries class="dropdown-menu dropdown-cart mr-5 pb-0"></app-wishlist-entries>
+      </ul> -->
+      <i class="fa fa-shopping-bag" (click)="openWishlistPage()"></i>
+      <i class="fa fa-shopping-cart" (click)="openCartPage()"></i>
     </div>
   </div>

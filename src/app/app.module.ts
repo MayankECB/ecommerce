@@ -24,12 +24,14 @@ import { environment } from '../environments/environment';
 import {DataService} from './service/data.service';
 import { DataShareService } from './service/data-share.service';
 import { FakeBackendInterceptor } from './service/fake-backend.service';
+import { WishlistEntriesComponent } from './product-management/wishlist-entries/wishlist-entries.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    WishlistEntriesComponent
   ],
   imports: [ 
     BrowserModule,

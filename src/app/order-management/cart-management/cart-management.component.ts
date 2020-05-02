@@ -14,6 +14,7 @@ export class CartManagementComponent implements OnInit {
 
   ngOnInit() {
     this.cart = JSON.parse(localStorage.getItem('shoppingCart'));
+    this.getTotal();
   }
 
   onRemoveProductsFromCart(productId: number){
