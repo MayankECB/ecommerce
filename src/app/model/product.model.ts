@@ -17,10 +17,6 @@ export class ProductItem {
     quantity: number;
     currenrcySymbol: string;
 
-    // constructor(id: number, name: string, categoryId: number, categoryName: string,
-    //     imageUrl: string[], description: string, price: string, discount: string,
-    //     discountedPrice: string, offerLabel: string, rating: string,  
-    //     color: string[], size: string[], quantity: number, currenrcySymbol: string) {
         constructor(product:Product){    
         this.productId = product.productId || 0;
         this.productName = product.productName || 'No Name';

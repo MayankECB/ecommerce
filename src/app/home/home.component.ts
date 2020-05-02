@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import  * as data from  '../../assets/json/products.json';
 import { ProductItem } from '../model/product.model';
 import { Product } from '../model/product.interface';
-import { ToastrService } from 'ngx-toastr';
+//import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private dataService: DataService,
     private httpClient: HttpClient,
-    private toastr: ToastrService,
+  //  private toastr: ToastrService,
     private router: Router) {     
     this.getProductList();
   }

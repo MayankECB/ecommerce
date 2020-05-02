@@ -4,13 +4,15 @@ import { CartManagementComponent } from './cart-management/cart-management.compo
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { PaymentServiceComponent } from './payment-service/payment-service.component';
 import { PostOrderActivityComponent } from './post-order-activity/post-order-activity.component';
+import { OrderManagementRoutingModule } from './order-management-routing.module';
 
 
 
 @NgModule({
   declarations: [CartManagementComponent, OrderHistoryComponent, PaymentServiceComponent, PostOrderActivityComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    OrderManagementRoutingModule
   ]
 })
 export class OrderManagementModule { }

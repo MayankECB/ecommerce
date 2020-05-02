@@ -32,8 +32,8 @@
         "offerLabel": "Sale",
         "currenrcySymbol": "$",
         "rating": "3",
-        "color": ["Grey", "Red"],
-        "size": ["M","M","L","XL"],
+        "color": ["White", "Red"],
+        "size": ["S","M","L","XL"],
         "quantity": 12
       },
       {
@@ -50,8 +50,8 @@
         "offerLabel": "New Arrival",
         "currenrcySymbol": "$",
         "rating": "3",
-        "color": ["Check Grey", "Red"],
-        "size": ["L","M","L","XL"],
+        "color": ["White", "Red"],
+        "size": ["S","M","L","XL"],
         "quantity": 12
       },
       {
@@ -68,8 +68,8 @@
         "offerLabel": "Sale",
         "currenrcySymbol": "$",
         "rating": "3",
-        "color": ["Blue", "Red", "White"],
-        "size": ["XL","M","L","XL"],
+        "color": ["White", "Red"],
+        "size": ["S","M","L","XL"],
         "quantity": 12
       }
   ]

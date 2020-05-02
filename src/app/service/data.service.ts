@@ -23,10 +23,6 @@ export class DataService {
     return this.httpClient.get('/api/getUserKart');
   }
 
-  addToCart(productId: string) {
-    return this.httpClient.post('/api/addCart', productId);
-  }
-
   removeCart(productId: string) {
     return this.httpClient.post('/api/removeCart', productId);
   }
