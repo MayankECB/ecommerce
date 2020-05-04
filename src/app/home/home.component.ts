@@ -27,6 +27,14 @@ export class HomeComponent implements OnInit {
   quantity: number;
   cartProduct: CartProductItem;
   wishListItem: WishListItem;
+  cars: any[] = [
+    {
+      url: '/sale1.jpg'
+    },
+    {
+      url: '/sale1.jpg'
+    }
+  ];
   images = [700, 533, 807, 124].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   constructor(private dataService: DataService,

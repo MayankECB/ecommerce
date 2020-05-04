@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpParams } from '@angular/common/http';
 import  * as data from  '../../assets/json/products.json';
 import { Product } from '../model/product.interface';
 import { Observable } from 'rxjs';
@@ -11,8 +11,12 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getProductList() {
-    return this.httpClient.get('assets/json/products.json');
+  getProductList(query?: string) {
+    const httpParams = new HttpParams();
+    if (query) {
+      httpParams.set('param', query);
+    }
+    return this.httpClient.get('assets/json/products.json', {params: httpParams});
   }
 
   fetchProductList(): Observable<any> {

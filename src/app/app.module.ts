@@ -10,6 +10,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 //import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {CarouselModule} from 'primeng/carousel';
+import {AutoCompleteModule} from 'primeng/autocomplete';
 
 // component
 import { AppComponent } from './app.component';
@@ -42,6 +44,8 @@ import { WishlistEntriesComponent } from './product-management/wishlist-entries/
     AngularFontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
+    CarouselModule,
+    AutoCompleteModule,
 //    ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
